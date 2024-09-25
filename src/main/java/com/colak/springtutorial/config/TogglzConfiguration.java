@@ -22,6 +22,7 @@ public class TogglzConfiguration {
         return new FeatureManagerBuilder()
                 .featureEnum(ProductCheckFeature.class)
                 .stateRepository(new JDBCStateRepository(dataSource))
+                // NoOpUserProvider means no special user management is used
                 .userProvider(new NoOpUserProvider())
                 .build();
     }
